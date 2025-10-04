@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: customers
+    description: One record per customer
     columns:
       - name: customer_id
         data_tests:
@@ -9,19 +10,24 @@ models:
           - not_null
 
   - name: stg_customers
+    description: This model cleans up customer data
     columns:
       - name: customer_id
+        description: Primary key
         data_tests:
           - unique
           - not_null
 
   - name: stg_orders
+    description: This model clean up order data
     columns:
       - name: order_id
+        description: Primary key
         data_tests:
           - unique
           - not_null
       - name: status
+        description: Primary key
         data_tests:
           - accepted_values:
               values:
